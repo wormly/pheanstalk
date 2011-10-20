@@ -68,7 +68,10 @@ class Pheanstalk_Command_PutCommand
 	 */
 	public function getDataLength()
 	{
-		return mb_strlen($this->_data, "latin1");
+		// This should check whether I do have overloaded strlen, because otherwise mb_ forces me to install another
+		// module to PHP.
+//		return mb_strlen($this->_data, "latin1");
+		return strlen($this->_data);
 	}
 
 	/* (non-phpdoc)
