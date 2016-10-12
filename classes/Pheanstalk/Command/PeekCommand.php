@@ -33,7 +33,7 @@ class Pheanstalk_Command_PeekCommand
 	 */
 	public function __construct($peekSubject)
 	{
-		if (is_int($peekSubject) || ctype_digit($peekSubject))
+		if (is_int($peekSubject))
 		{
 			$this->_jobId = $peekSubject;
 		}
